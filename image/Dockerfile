@@ -1,5 +1,9 @@
-FROM ubuntu:14.04
-MAINTAINER Phusion <info@phusion.nl>
+FROM ubuntu-debootstrap:14.04
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# install common packages
+RUN apt-get update && apt-get install -y curl net-tools sudo git libxml2-dev build-essential make
 
 ENV HOME /root
 RUN mkdir /build
