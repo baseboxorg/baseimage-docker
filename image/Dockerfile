@@ -3,7 +3,7 @@ FROM ubuntu-debootstrap:14.04
 ENV DEBIAN_FRONTEND noninteractive
 
 # install common packages
-RUN apt-get update && apt-get install -y curl net-tools sudo git libxml2-dev build-essential make
+RUN apt-get update && apt-get install -y curl sudo
 
 ENV HOME /root
 RUN mkdir /build
